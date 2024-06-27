@@ -17,6 +17,8 @@ const Weather = ({weatherData}) => {
         return cloudsImage; 
       case 'Clear':
         return clearImage; 
+      default:
+        return clearImage; // Default case, use a generic image or handle as it needed.
     }
   };
   
@@ -29,7 +31,8 @@ const Weather = ({weatherData}) => {
                 <li className= "weather-items">
                   <p>{item.dt_txt}</p>
                   <p>{item.weather[0].main}</p>
-                  <img src={getImage(item.weather[0].main)}/>
+                  <img src={getImage(item.weather[0].main)} alt={[item.weather[0].main]}/> 
+                  { /* Add alt attribute */}
                   <p>{item.main.temp} F</p>
                   <p>wind: {item.wind.speed} mph</p>
                   <p>humidity: {item.main.humidity}%</p>
