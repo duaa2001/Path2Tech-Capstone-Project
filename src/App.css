@@ -1,5 +1,45 @@
 .App {
   text-align: center;
+  background-color: rgb(96, 193, 232);
 }
 
 /* Design our app */
+
+.title-label {
+  color:yellow;
+}
+
+.title-image {
+  width: 200px; /* Adjust the size as needed */
+  height: 200px;
+  margin-top: 10px; /* Add some space if needed */
+}
+
+.search-button {
+  border: 2px solid black; /* Strong border */
+}
+
+.welcome-message {
+  color:yellow;
+}
+
+.weather-items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.weather-items {
+  display: flex;
+  flex-direction: column; /* Each item will have its elements in a column */
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 10px; 
+}
+
+.weather-items img {
+  width: 100px;  
+  height: 100px;
+  
+}

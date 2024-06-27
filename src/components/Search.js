@@ -9,27 +9,11 @@ const Search = ({ onChange, searchTerm, onSubmit, autoFocus, weatherCondition })
             inputRef.current.focus();
         }
     }, [autoFocus]);
-
-    // Function to get the image based on the weather condition;
-
-    const getImageSrc = () => {
-        switch (weatherCondition) {
-            case 'Rain':
-                return '/assets/images/wrainy.jpeg';
-            case 'Clear':
-                return '/assets/images/wsunny.jpeg';
-            case 'Clouds':
-                return '/assets/images/wwcloudy.jpeg';
-            default:
-                return null;
-        }
-    };
+    
 
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="search-component">
             <br />
-            {weatherCondition && <img src={getImageSrc()} alt={weatherCondition} style={{ width: '100px', height: '100px' }} />}
-            <br/>
             <input
                 id="search"
                 type="text"
@@ -37,10 +21,10 @@ const Search = ({ onChange, searchTerm, onSubmit, autoFocus, weatherCondition })
                 name="city"
                 onChange={onChange}
                 ref={inputRef}
-                placeholder="Zip code"
+                placeholder="Enter name of city"
                 autoFocus={autoFocus}
             />
-            <button type="submit">Search</button>
+            <button type="submit" className='search-button'>Search</button>
         </form>
     );
 };
